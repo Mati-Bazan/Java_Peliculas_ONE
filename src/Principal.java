@@ -1,4 +1,6 @@
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmatch.calculos.FiltroRecomendacion;
+import com.aluracursos.sreenmatch.modelos.Episodio;
 import com.aluracursos.sreenmatch.modelos.Pelicula;
 import com.aluracursos.sreenmatch.modelos.Serie;
 
@@ -40,6 +42,15 @@ public class Principal {
         calculadora.incluye(otraPelicula);
         System.out.println("Tiempo total de la lista de contenido: "+calculadora.getTiempoTotal() + " minutos");
 
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
+        filtroRecomendacion.filtra(miPelicula);
 
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La casa Targaryen");
+        episodio.setSerie(casaDragon);
+        episodio.setTotalVisualizaciones(50);
+
+        filtroRecomendacion.filtra(episodio);
     }
 }
